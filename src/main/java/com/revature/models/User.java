@@ -1,15 +1,17 @@
 package com.revature.models;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import javax.persistence.*;
 
-@Data
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
+@Getter
+@Setter
 @Table(name = "users")
 public class User {
 
@@ -20,4 +22,5 @@ public class User {
     private String password;
     private String firstName;
     private String lastName;
+    private String address;
 }
