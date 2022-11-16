@@ -12,8 +12,10 @@ jobs:
     env: 
       DOCKER_USER: ${{secrets.DOCKER_USER}}
       DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
-      DATE: "`r format(Sys.time(), '%d %B, %Y')`"
     steps:
+      - name: get date
+        id: date
+        run: echo "DATE::$('%Y-%m-%d')" >> $GITHUB_ENV
       - uses: actions/checkout@v2
       - name: Docker Login
         run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
