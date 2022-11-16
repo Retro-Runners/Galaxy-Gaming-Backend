@@ -2,9 +2,9 @@ name: Build Application and Deliver to Dockerhub
 
 on:
   push:
-    branches: [main]
+    branches: [Dev]
   pull_request:
-    branches: [main]
+    branches: [Dev]
     
 jobs:
   build:
