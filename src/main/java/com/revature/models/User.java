@@ -27,7 +27,6 @@ public class User {
     private String lastName;
 
     @Column(name = "address")
-    @NotNull
     private String address;
 
     @Column(name = "email")
