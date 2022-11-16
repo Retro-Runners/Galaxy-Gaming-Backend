@@ -18,11 +18,26 @@ public class Product {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private int quantity; // inventory
-    private String price;
-    private String description;
-    private String image;
-    private String name;
+
+    @Column(name = "type")
     private String type; // Console, Accessory,  Game
+
+    @Column(name = "console")
     private String console; // NES, SNES, GBA, N64, GC
+
+    @Column(name = "name")
+    private String name;
+
+    @Column(name = "price")
+    private String price;
+
+    @Column(name = "quantity")
+    private int quantity; // inventory
+
+    @Column(name = "description")
+    private String description;
+
+    @Column(name = "image")
+    private String image;
+
 }
