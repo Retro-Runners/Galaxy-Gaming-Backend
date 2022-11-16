@@ -17,7 +17,7 @@ jobs:
       - name: Docker Login
         run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
       - name: Build Docker Image
-        run: docker build -t shining118/galaxygamingbe:${{github.run_attempt}} .
+        run: docker build -t shining118/galaxygamingbe:0.${{github.run_attempt}} .
       - name: Push to Dockerhub
-        run: docker push shining118/galaxygamingbe:${{github.run_attempt}}
+        run: docker push shining118/galaxygamingbe:0.${{github.run_attempt}}
         
