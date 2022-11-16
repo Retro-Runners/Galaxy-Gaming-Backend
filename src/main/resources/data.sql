@@ -49,7 +49,7 @@ INSERT INTO products (id, quantity, price, description, image, name, type, conso
      ''
 );
 
-INSERT INTO users (id, email, password, first_name, last_name, address) VALUES (
+INSERT INTO users (id, first_name, last_name, address, email, pass_word) VALUES (
     1,
     'testuser@gmail.com',
     'password',
