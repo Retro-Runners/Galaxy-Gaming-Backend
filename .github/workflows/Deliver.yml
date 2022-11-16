@@ -12,12 +12,14 @@ jobs:
     env: 
       DOCKER_USER: ${{secrets.DOCKER_USER}}
       DOCKER_PASSWORD: ${{secrets.DOCKER_PASSWORD}}
-      date: "`r format(Sys.time(), '%d %B, %Y')`"
     steps:
+      - name: get date
+        id: date
+        run: echo "::set-output name=date::$('%y-%m-%d')"
       - uses: actions/checkout@v2
       - name: Docker Login
         run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
       - name: Build Docker Image
-        run: docker build -t bpinkerton/quizlite:$date .
+        run: docker build -t shining118/Galaxy-Gaming-BE:$date .
       - name: Push to Dockerhub
         run: docker push bpinkerton/quizlite:$date
