@@ -15,11 +15,22 @@ jobs:
     steps:
       - name: get date
         id: date
-        run: echo "date::$('%y-%m-%d')"
-      - uses: actions/checkout@v2
-      - name: Docker Login
-        run: docker login -u $DOCKER_USER -p $DOCKER_PASSWORD
-      - name: Build Docker Image
-        run: docker build -t shining118/galaxygamingbe .
-      - name: Push to Dockerhub
-        run: docker push shining118/galaxygamingbe
+        run: echo "::set-output name=date::$('%y-%m-%d')"
+    
+      - name: set up QEMU
+        uses: docker/setup-qemu-action@v2
+        
+      - name: set up docker buildx
+        uses: docker/setup-buildx-action@v2
+        
+      - name: login to Docker Hub
+        uses: docker/login-action@v2
+        with:
+          username: ${{secrets.DOCKER_USER}}
+          password: ${{secrets.DOCKER_PASSWORD}}
+          
+      - name: build push
+        uses: docker/build-push-action@v3
+        with:
+          push: true
+          tags: ${{steps.date.output.date}}
