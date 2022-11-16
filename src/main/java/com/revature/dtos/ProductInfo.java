@@ -17,5 +17,5 @@ public class ProductInfo {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    private int quantity;
+    private int quantity; // amount purchased
 }
