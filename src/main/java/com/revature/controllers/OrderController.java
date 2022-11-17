@@ -2,10 +2,8 @@ package com.revature.controllers;
 
 
 import com.revature.annotations.Authorized;
-import com.revature.models.User;
 import com.revature.models.Order;
 import com.revature.services.OrderService;
-import com.revature.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -17,17 +15,16 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/orders")
 @RequiredArgsConstructor
 @CrossOrigin(origins = {"http://localhost:4200", "http://localhost:3000"}, allowCredentials = "true")
-public class UserController {
+public class OrderController {
 
-    private UserService userService;
+    private OrderService orderService;
 
-    public UserController(UserService userService) {
-        this.userService = userService;
+    @GetMapping("/userId={userId}")
+    @ResponseBody
+    public List<Order> findPreviousOrders(@PathVariable int userId) {
+        return orderService.findPreviousOrders(userId);
     }
-
-
-
 }
