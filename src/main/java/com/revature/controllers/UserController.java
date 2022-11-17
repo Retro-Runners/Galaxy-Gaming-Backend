@@ -12,6 +12,8 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/users")
 @RequiredArgsConstructor
@@ -24,11 +26,11 @@ public class UserController {
         this.userService = userService;
     }
 
-    @GetMapping("/previousorders")
-    public User seePreviousOrders(){return null;} // adding in temp code to allow for the code to run
 
-
-
+    @GetMapping("/pastorders")
+    public List<Order> findPreviousOrders(@RequestParam(required = true) int userId) {
+        return productService.findOrderByUserId(userId);
+    }
 
 
 }
