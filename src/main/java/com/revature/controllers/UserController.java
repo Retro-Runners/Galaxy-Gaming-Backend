@@ -25,7 +25,7 @@ public class UserController {
     }
 
     @GetMapping("/previousorders")
-    public User seePreviousOrders;
+    public User seePreviousOrders(){return null;} // adding in temp code to allow for the code to run
 
 
 
