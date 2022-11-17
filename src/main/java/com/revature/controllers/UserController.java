@@ -27,8 +27,9 @@ public class UserController {
     }
 
 
-    @GetMapping("/previousorders")
-    public List<Order> findPreviousOrders(@RequestParam(required = true) int userId) {
+    @GetMapping("/userId={userId}/previousorders")
+    @ResponseBody
+    public List<Order> findPreviousOrders(@PathVariable int userId) {
         return userService.findPreviousOrders(userId);
     }
 
