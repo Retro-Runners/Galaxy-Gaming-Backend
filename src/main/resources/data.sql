@@ -44,8 +44,7 @@ INSERT INTO products (quantity, price, description, image, name, type, console) 
      ''
 );
 
-INSERT INTO users (id, email, pass_word, first_name, last_name, address) VALUES (
-    1,
+INSERT INTO users (first_name, last_name, address, email, pass_word) VALUES (
     'Test',
     'User',
     '',
