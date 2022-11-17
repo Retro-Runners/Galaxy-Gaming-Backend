@@ -1,10 +1,10 @@
 INSERT INTO products (type, console, name, price, quantity, description, image) VALUES (
-    '',
-    '',
+    'Game',
+    'N64',
     'Super Mario Run',
     15.00,
     3,
-    'The best game ever',
+    'Rescue Princess Peach!',
     ''
 );
 
