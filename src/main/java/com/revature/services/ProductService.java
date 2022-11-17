@@ -37,7 +37,5 @@ public class ProductService {
         productRepository.deleteById(id);
     }
 
-    public List<Order> findPreviousOrders(int userId) {
-        if(userId != null) return productRepository.findPreviousOrdersByUserId(userId);
-    }
+
 }

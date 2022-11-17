@@ -27,9 +27,9 @@ public class UserController {
     }
 
 
-    @GetMapping("/pastorders")
+    @GetMapping("/previousorders")
     public List<Order> findPreviousOrders(@RequestParam(required = true) int userId) {
-        return productService.findOrderByUserId(userId);
+        return userService.findPreviousOrders(userId);
     }
 
 
