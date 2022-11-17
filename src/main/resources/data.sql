@@ -1,5 +1,4 @@
-INSERT INTO products (id, quantity, price, description, image, name, type, console) VALUES (
-    1,
+INSERT INTO products (quantity, price, description, image, name, type, console) VALUES (
     10,
     20.00,
     'A nice pair of headphones',
@@ -9,7 +8,6 @@ INSERT INTO products (id, quantity, price, description, image, name, type, conso
     ''
 ),
 (
-    2,
     5,
     45.00,
     'A nice TeeShirt',
@@ -19,7 +17,6 @@ INSERT INTO products (id, quantity, price, description, image, name, type, conso
     ''
 ),
 (
-    3,
     20,
     2.50,
     'A reusable shopping bag',
@@ -29,7 +26,6 @@ INSERT INTO products (id, quantity, price, description, image, name, type, conso
     ''
 ),
 (
-    4,
     20,
     10.00,
     'A fancy cap for a fancy person',
@@ -39,7 +35,6 @@ INSERT INTO products (id, quantity, price, description, image, name, type, conso
     ''
 ),
 (
-    5,
     3,
     80.00,
     'A nice coat',
@@ -49,7 +44,7 @@ INSERT INTO products (id, quantity, price, description, image, name, type, conso
      ''
 );
 
-INSERT INTO users (id, first_name, last_name, address, email, pass_word) VALUES (
+INSERT INTO users (id, email, pass_word, first_name, last_name, address) VALUES (
     1,
     'testuser@gmail.com',
     'password',
