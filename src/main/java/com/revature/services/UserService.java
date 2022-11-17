@@ -24,7 +24,4 @@ public class UserService {
         return userRepository.save(user);
     }
 
-    public List<Order> findPreviousOrders(int userId) {
-        if(userId != null) return userRepository.findPreviousOrdersByUserId(userId);
-    }
 }

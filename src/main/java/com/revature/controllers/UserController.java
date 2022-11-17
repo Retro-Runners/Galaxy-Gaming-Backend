@@ -3,6 +3,8 @@ package com.revature.controllers;
 
 import com.revature.annotations.Authorized;
 import com.revature.models.User;
+import com.revature.models.Order;
+import com.revature.services.OrderService;
 import com.revature.services.UserService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -22,6 +24,8 @@ public class UserController {
 
     private UserService userService;
 
+    private OrderService orderService;
+
     public UserController(UserService userService) {
         this.userService = userService;
     }
@@ -30,7 +34,7 @@ public class UserController {
     @GetMapping("/userId={userId}/previousorders")
     @ResponseBody
     public List<Order> findPreviousOrders(@PathVariable int userId) {
-        return userService.findPreviousOrders(userId);
+        return orderService.findPreviousOrders(userId);
     }
 
 
