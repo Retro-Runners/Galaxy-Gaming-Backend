@@ -37,12 +37,4 @@ public class User {
     @NotNull
     private String password;
 
-    @Column
-    @OneToOne
-    private Product[] cart;
-
-    @Column
-    @OneToOne
-    private Product[] wishlist;
-
 }

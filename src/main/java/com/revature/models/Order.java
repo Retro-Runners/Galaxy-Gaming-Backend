@@ -22,13 +22,15 @@ public class Order {
     private int id;
 
     @Column
+    @JoinColumn(name = "userId")
     private int UserId;
 
     @Column
-    private Product[] productList;
+    @JoinColumn(name = "productId")
+    private int[] productIds;
 
     @Column
-    private int[] amount;
+    private int[] quantities;
 
     @Column
     private double subtotal;
