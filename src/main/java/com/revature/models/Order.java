@@ -22,7 +22,7 @@ public class Order {
     private int id;
 
     @Column
-    @JoinColumn(name = "userId")
+    @JoinColumn(name = "user.userId")
     private int UserId;
 
     @Column
