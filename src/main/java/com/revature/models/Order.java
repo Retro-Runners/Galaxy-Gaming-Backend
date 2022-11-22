@@ -21,13 +21,14 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Column
-    @JoinColumn(name = "user.userId")
-    private int UserId;
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "userId")
+    private User user;
 
-    @Column
+    @ManyToMany(fetch = FetchType.LAZY)
     @JoinColumn(name = "productId")
-    private int[] productIds;
+    @OrderColumn
+    private Product[] products;
 
     @Column
     private int[] quantities;

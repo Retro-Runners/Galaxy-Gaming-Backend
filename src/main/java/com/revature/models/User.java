@@ -7,6 +7,7 @@ import lombok.Setter;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
+import java.util.List;
 
 @Entity
 @NoArgsConstructor
@@ -36,5 +37,6 @@ public class User {
     @Column(name = "pass_word")
     @NotNull
     private String password;
+
 
 }
