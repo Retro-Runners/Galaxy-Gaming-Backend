@@ -22,9 +22,18 @@ public class OrderController {
 
     private OrderService orderService;
 
-    @GetMapping("/userId={userId}")
-    @ResponseBody
+    @Authorized
+    @PutMapping
+    public List<Order> createOrder() {
+
+    }
+
+
+
+
+    @GetMapping("/{userId}")
     public List<Order> findPreviousOrders(@PathVariable int userId) {
+
         return orderService.findPreviousOrders(userId);
     }
 }

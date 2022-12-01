@@ -42,13 +42,13 @@ public class ProductController {
 
     @Authorized
     @PutMapping
-    public ResponseEntity<Product> upsert(@RequestBody Product product) {
+    public ResponseEntity<Product> insertProductIntoTable(@RequestBody Product product) {
         return ResponseEntity.ok(productService.save(product));
     }
 
     @Authorized
     @PatchMapping
-    public ResponseEntity<List<Product>> purchase(@RequestBody List<ProductInfo> metadata) { 	
+    public ResponseEntity<List<Product>> purchaseProduct(@RequestBody List<ProductInfo> metadata) {
     	List<Product> productList = new ArrayList<Product>();
     	
     	for (int i = 0; i < metadata.size(); i++) {
@@ -69,6 +69,7 @@ public class ProductController {
     	}
         
         productService.saveAll(productList, metadata);
+
 
         return ResponseEntity.ok(productList);
     }

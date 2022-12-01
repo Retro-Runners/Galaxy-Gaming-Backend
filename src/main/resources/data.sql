@@ -3,7 +3,7 @@ INSERT INTO products (type, console, name, price, quantity, description, image) 
     'N64',
     'Super Mario Run',
     15.00,
-    3,
+    99,
     'Rescue Princess Peach!',
     ''
 );
