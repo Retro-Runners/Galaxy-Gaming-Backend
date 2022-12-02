@@ -1,4 +1,7 @@
 package com.revature.repositories;
 
-public class OrderItemsRepository {
+import com.revature.models.OrderItem;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface OrderItemsRepository extends JpaRepository<OrderItem, Integer> {
 }

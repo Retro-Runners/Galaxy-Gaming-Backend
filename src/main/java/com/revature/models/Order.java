@@ -4,9 +4,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import java.util.*;
 
 import javax.persistence.*;
-
 
 @Entity
 @NoArgsConstructor
@@ -21,19 +21,18 @@ public class Order {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "userId")
-    private User user;
+    @Column(name = "createdDate")
+    private Date createdDate;
 
-    @ManyToMany(fetch = FetchType.LAZY)
-    @JoinColumn(name = "productId")
-    @OrderColumn
-    private Product[] products;
-
-    @Column
-    private int[] quantities;
-
-    @Column
+    @Column(name = "subtotal")
     private double subtotal;
+
+    @OneToMany(mappedBy = "order", fetch = FetchType.LAZY)
+    @JoinColumn(name = "orderId")
+    private List<OrderItem> orderItems;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "userId", referencedColumnName = "id")
+    private User user;
 
 }
