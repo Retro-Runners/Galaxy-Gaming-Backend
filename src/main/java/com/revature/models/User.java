@@ -1,16 +1,13 @@
 package com.revature.models;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.*;
 import javax.validation.constraints.NotNull;
 
 @Entity
 @NoArgsConstructor
-@AllArgsConstructor
+
 @Getter
 @Setter
 @Table(name = "users")
@@ -18,7 +15,7 @@ public class User {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int userId;
 
     @Column(name = "first_name")
     private String firstName;
@@ -37,12 +34,13 @@ public class User {
     @NotNull
     private String password;
 
-    @Column
     @OneToOne
     private Product[] cart;
 
-    @Column
     @OneToOne
     private Product[] wishlist;
 
+
+    public User(int userId, String firstName, String lastName, String address, String email, String password) {
+    }
 }

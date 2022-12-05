@@ -17,7 +17,7 @@ public class Product {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int productId;
 
     @Column(name = "type")
     private String type; // Console, Accessory,  Game
@@ -29,7 +29,7 @@ public class Product {
     private String name;
 
     @Column(name = "price")
-    private String price;
+    private double price;
 
     @Column(name = "quantity")
     private int quantity; // inventory
