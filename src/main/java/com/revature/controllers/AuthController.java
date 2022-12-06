@@ -40,18 +40,13 @@ public class AuthController {
     }
 
     @PostMapping("/setAddress")
-    public String setAddress(@RequestBody String address, HttpSession session){
-        log.info(address);
-        Object temp = session.getAttribute("user");
-        log.info(session.getAttribute("user").toString());
-        if(temp instanceof User){
-            if(userService.setAddress(address,((User) temp).getEmail())){
-                return address;
-            }else{
-                return ""; // user service failed
-            }
-        } else{
-            return ""; // session failed to find instance of user
+    public String setAddress(@RequestBody LoginRequest saverq, HttpSession session){
+        String email = saverq.getEmail();
+        String address = saverq.getPassword();
+        if(userService.setAddress(address,email)){
+            return address;
+        }else{
+            return ""; // user service failed
         }
     }
 
