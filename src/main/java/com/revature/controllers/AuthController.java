@@ -6,13 +6,14 @@ import com.revature.models.Product;
 import com.revature.models.User;
 import com.revature.services.AuthService;
 import com.revature.services.UserService;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpSession;
 import java.util.Optional;
-
+@Slf4j
 @RestController
 @RequestMapping("/auth")
 @CrossOrigin(origins = {"http://localhost:4200", "http://localhost:3000"}, allowCredentials = "true")
@@ -39,11 +40,18 @@ public class AuthController {
     }
 
     @PostMapping("/setAddress")
-    public String setAddress(@RequestBody String Address, HttpSession session){
-        if(userService.setAddress(Address,"")){
-            return Address;
-        }else{
-            return "";
+    public String setAddress(@RequestBody String address, HttpSession session){
+        log.info(address);
+        Object temp = session.getAttribute("user");
+        log.info(session.getAttribute("user").toString());
+        if(temp instanceof User){
+            if(userService.setAddress(address,((User) temp).getEmail())){
+                return address;
+            }else{
+                return ""; // user service failed
+            }
+        } else{
+            return ""; // session failed to find instance of user
         }
     }
 

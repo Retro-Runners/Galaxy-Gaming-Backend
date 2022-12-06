@@ -2,10 +2,12 @@ package com.revature.services;
 
 import com.revature.models.User;
 import com.revature.repositories.UserRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 
 import java.util.Optional;
 
+@Slf4j
 @Service
 public class UserService {
 
@@ -16,6 +18,7 @@ public class UserService {
     }
 
     public boolean setAddress(String address, String email) {
+        log.info(address);
         userRepository.updateAddress(address,email);
         return true;
     }
