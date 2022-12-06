@@ -15,6 +15,11 @@ public class UserService {
         this.userRepository = userRepository;
     }
 
+    public boolean setAddress(String address, String email) {
+        userRepository.updateAddress(address,email);
+        return true;
+    }
+
     public Optional<User> findByCredentials(String email, String password) {
         return userRepository.findByEmailAndPassword(email, password);
     }

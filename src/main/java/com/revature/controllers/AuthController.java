@@ -5,6 +5,7 @@ import com.revature.dtos.RegisterRequest;
 import com.revature.models.Product;
 import com.revature.models.User;
 import com.revature.services.AuthService;
+import com.revature.services.UserService;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -18,9 +19,10 @@ import java.util.Optional;
 public class AuthController {
 
     private final AuthService authService;
-
-    public AuthController(AuthService authService) {
+    private final UserService userService;
+    public AuthController(AuthService authService, UserService userService) {
         this.authService = authService;
+        this.userService = userService;
     }
 
     @PostMapping("/login")
@@ -34,6 +36,15 @@ public class AuthController {
         session.setAttribute("user", optional.get());
 
         return ResponseEntity.ok(optional.get());
+    }
+
+    @PostMapping("/setAddress")
+    public String setAddress(@RequestBody String Address, HttpSession session){
+        if(userService.setAddress(Address,"")){
+            return Address;
+        }else{
+            return "";
+        }
     }
 
     @PostMapping("/logout")
