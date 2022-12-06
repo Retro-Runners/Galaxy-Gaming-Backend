@@ -12,6 +12,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 import javax.persistence.Column;
 
+import java.util.Optional;
+
 import static org.junit.jupiter.api.Assertions.*;
 @SpringBootTest
 class UserServiceTest {
@@ -24,6 +26,8 @@ class UserServiceTest {
 
     private User newUser;
     private User dataDBUser;
+
+    private int id = 1;
     private String email = "testuser@gmail.com";
     private String password = "password";
     private String firstName = "Test";
@@ -75,6 +79,35 @@ class UserServiceTest {
         Mockito.when(userRepository.save(newUser)).thenReturn(dataDBUser);
 
         User finalUser = userService.save(newUser);
+
+        Assertions.assertEquals(dataDBUser.getId(), finalUser.getId());
+        Assertions.assertEquals(dataDBUser.getEmail(), finalUser.getEmail());
+        Assertions.assertEquals(dataDBUser.getPassword(), finalUser.getPassword());
+        Assertions.assertEquals(dataDBUser.getFirstName(), finalUser.getFirstName());
+        Assertions.assertEquals(dataDBUser.getLastName(), finalUser.getLastName());
+        Assertions.assertEquals(dataDBUser.getAddress(), finalUser.getAddress());
+
+    }
+
+    @Test
+    public void Id_ReturnsUserwithId() {
+        Mockito.when(userRepository.findById(id)).thenReturn(dataDBUser);
+
+        User finalUser = userService.findById(id);
+
+        Assertions.assertEquals(dataDBUser.getId(), finalUser.getId());
+        Assertions.assertEquals(dataDBUser.getEmail(), finalUser.getEmail());
+        Assertions.assertEquals(dataDBUser.getPassword(), finalUser.getPassword());
+        Assertions.assertEquals(dataDBUser.getFirstName(), finalUser.getFirstName());
+        Assertions.assertEquals(dataDBUser.getLastName(), finalUser.getLastName());
+        Assertions.assertEquals(dataDBUser.getAddress(), finalUser.getAddress());
+    }
+
+    @Test
+    public void Email_ReturnsUserwithEmail() {
+        Mockito.when(userRepository.findByEmail(email)).thenReturn(dataDBUser);
+
+        User finalUser = userService.findByEmail(email);
 
         Assertions.assertEquals(dataDBUser.getId(), finalUser.getId());
         Assertions.assertEquals(dataDBUser.getEmail(), finalUser.getEmail());
