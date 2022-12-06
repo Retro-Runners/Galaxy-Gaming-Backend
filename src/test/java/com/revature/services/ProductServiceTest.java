@@ -27,12 +27,16 @@ public class ProductServiceTest {
 
     private List<Product> items;
     private Product item1;
+    private Product item1FromDb;
     private Product item2;
 
     @BeforeEach
     public void populateObjects() {
         item1=new Product(5, "First Person Shooter", "https://upload.wikimedia.org/wikipedia/en/1/14/DuckHuntBox.jpg", "Duck Hunt", 37.99, 5, "NES", "Game");
         item2=new Product(3, "Strategy", "https://upload.wikimedia.org/wikipedia/en/thumb/7/7d/Tetris_NES_cover_art.jpg/220px-Tetris_NES_cover_art.jpg", "Tetris",19.95,4, "NES", "Game");
+
+        item1FromDb=new Product(5, "First Person Shooter", "https://upload.wikimedia.org/wikipedia/en/1/14/DuckHuntBox.jpg", "Duck Hunt", 37.99, 5, "NES", "Game");
+
 
         items = new ArrayList<Product>();
         items.add(item1);
@@ -44,16 +48,11 @@ public class ProductServiceTest {
     void givenProductRepo_getProducts_returnsAllProducts() {
         // define your stubbing behavior
 
-        //Mockito.when(passwordEncoder.encode("testPassword")).thenReturn("encryptedPassword");
-        Mockito.when(productRepository.findAll()).thenReturn(items);
+       Mockito.when(productRepository.findAll()).thenReturn(items);
 
-        // provide your given arguments -> taken care of in BeforeEach
-        // call your method to be tested
+
         List<Product> dbItems = productRepository.findAll();
-        //User user = userService.save(newUser);
-        //productService.delete(itemIDD);
 
-        // make some assertions
         Assertions.assertEquals(item1, dbItems.get(0));
         Assertions.assertEquals(item1.getId(), dbItems.get(0).getId());
         Assertions.assertEquals(item1.getQuantity(), dbItems.get(0).getQuantity());
@@ -72,6 +71,20 @@ public class ProductServiceTest {
         Assertions.assertEquals(item2.getDescription(), dbItems.get(1).getDescription());
 
     }
+    @Test
+    void givenProduct_addProductToList_returnsProductAddedToList() {
+        Mockito.when(productRepository.save(item1)).thenReturn(item1FromDb);
 
+        Product returnedProductAddedToDb = productRepository.save(item1);
+
+        Assertions.assertEquals(item1FromDb, returnedProductAddedToDb);
+        Assertions.assertEquals(item1FromDb.getId(), returnedProductAddedToDb.getId());
+        Assertions.assertEquals(item1FromDb.getQuantity(), returnedProductAddedToDb.getQuantity());
+        Assertions.assertEquals(item1FromDb.getName(), returnedProductAddedToDb.getName());
+        Assertions.assertEquals(item1FromDb.getType(), returnedProductAddedToDb.getType());
+        Assertions.assertEquals(item1FromDb.getImage(), returnedProductAddedToDb.getImage());
+        Assertions.assertEquals(item1FromDb.getConsole(), returnedProductAddedToDb.getConsole());
+        Assertions.assertEquals(item1FromDb.getDescription(), returnedProductAddedToDb.getDescription());
+    }
 
 }
