@@ -23,8 +23,12 @@ class UserServiceTest {
     private UserRepository userRepository;
 
     private User newUser;
-    private User dbUser;
-    private String email ="testuser@gmail.com";
+    private User dataDBUser;
+    private String email = "testuser@gmail.com";
+    private String password = "password";
+    private String firstName = "Test";
+    private String lastName = "User";
+    private String address = "123 Lake St.";
 
     @BeforeEach
     public void populateObjects(){
@@ -33,25 +37,27 @@ class UserServiceTest {
         newUser = new User();
         newUser.setId(1);
         newUser.setEmail(email);
-        newUser.setPassword("password");
-        newUser.setFirstName("Test");
-        newUser.setLastName("User");
-        newUser.setAddress("");
+        newUser.setPassword(password);
+        newUser.setFirstName(firstName);
+        newUser.setLastName(lastName);
+        newUser.setAddress(address);
 
 
-        dbUser = new User();
-        dbUser.setId(1);
-        dbUser.setEmail(email);
-        dbUser.setPassword("encryptedPassword");
-        dbUser.setLastName("User");
-        dbUser.setAddress("");
+        dataDBUser = new User();
+        dataDBUser.setId(1);
+        dataDBUser.setEmail(email);
+        dataDBUser.setPassword(password);
+        dataDBUser.setFirstName(firstName);
+        dataDBUser.setLastName(lastName);
+        dataDBUser.setAddress(address);
+
     }
     @Test
     void givenNewUser_createUser_returnsCreatedEntity() {
         // define your stubbing behavior
 
         //Mockito.when(passwordEncoder.encode("testPassword")).thenReturn("encryptedPassword");
-        Mockito.when(userRepository.save(newUser)).thenReturn(dbUser);
+        Mockito.when(userRepository.save(newUser)).thenReturn(dataDBUser);
 
         // provide your given arguments -> taken care of in BeforeEach
         // call your method to be tested
@@ -59,11 +65,23 @@ class UserServiceTest {
         User user = userService.save(newUser);
 
         // make some assertions
-        Assertions.assertEquals(dbUser.getId(), user.getId());
+        Assertions.assertEquals(dataDBUser.getId(), user.getId());
 
     }
 
     @Test
-    void save() {
+    public void NewUser_CreatesDBUser(){
+
+        Mockito.when(userRepository.save(newUser)).thenReturn(dataDBUser);
+
+        User finalUser = userService.save(newUser);
+
+        Assertions.assertEquals(dataDBUser.getId(), finalUser.getId());
+        Assertions.assertEquals(dataDBUser.getEmail(), finalUser.getEmail());
+        Assertions.assertEquals(dataDBUser.getPassword(), finalUser.getPassword());
+        Assertions.assertEquals(dataDBUser.getFirstName(), finalUser.getFirstName());
+        Assertions.assertEquals(dataDBUser.getLastName(), finalUser.getLastName());
+        Assertions.assertEquals(dataDBUser.getAddress(), finalUser.getAddress());
+
     }
 }

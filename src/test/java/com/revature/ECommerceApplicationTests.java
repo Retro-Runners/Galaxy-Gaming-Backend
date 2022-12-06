@@ -10,4 +10,11 @@ class ECommerceApplicationTests {
 	void contextLoads() {
 	}
 
+
+	// testing register user
+	@Test
+	void function(){
+
+	}
+
 }
