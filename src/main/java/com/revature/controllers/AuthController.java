@@ -40,14 +40,17 @@ public class AuthController {
     }
 
     @PostMapping("/setAddress")
-    public String setAddress(@RequestBody LoginRequest saverq, HttpSession session){
+    public void setAddress(@RequestBody LoginRequest saverq, HttpSession session){
         String email = saverq.getEmail();
         String address = saverq.getPassword();
-        if(userService.setAddress(address,email)){
-            return address;
-        }else{
-            return ""; // user service failed
-        }
+        userService.setAddress(address,email);
+    }
+    @PostMapping("/getAddress")
+    public LoginRequest getAddress(@RequestBody LoginRequest saverq, HttpSession session){
+        String email = saverq.getEmail();
+        LoginRequest temp = new LoginRequest();
+        temp.setPassword(userService.getAddress(email));
+        return temp;
     }
 
     @PostMapping("/logout")

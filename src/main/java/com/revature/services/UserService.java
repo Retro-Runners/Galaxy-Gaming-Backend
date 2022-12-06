@@ -18,7 +18,7 @@ public class UserService {
     }
 
     public boolean setAddress(String address, String email) {
-        log.info(address);
+        log.info(email);
         userRepository.updateAddress(address,email);
         return true;
     }
@@ -29,5 +29,10 @@ public class UserService {
 
     public User save(User user) {
         return userRepository.save(user);
+    }
+
+    public String getAddress(String email) {
+        log.info(email);
+        return userRepository.getEmail(email);
     }
 }
