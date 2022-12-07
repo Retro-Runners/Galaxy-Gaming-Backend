@@ -18,15 +18,6 @@ INSERT INTO products (quantity, price, description, image, name, type, console) 
 ),
 (
    5,
-   19.99,
-   'Spider-Man',
-   'https://cdn11.bigcommerce.com/s-ymgqt/images/stencil/175x175/products/27388/18460/Game-GameCube-Spiderman-2__62355.1.jpg',
-   'Spider-Man',
-   'Game',
-   'Game Cube'
-),
-(
-   5,
    89.99,
    'Luigis Mansion',
    'https://cdn11.bigcommerce.com/s-ymgqt/images/stencil/175x175/products/19007/23004/Luigis_Mansion_box__40032.1.jpg',
@@ -71,15 +62,6 @@ INSERT INTO products (quantity, price, description, image, name, type, console) 
    'Game Cube'
 ),
 (
-   4,
-   19.99,
-   'Harry Potter Prisoner of Azkaban',
-   'https://cdn11.bigcommerce.com/s-ymgqt/images/stencil/175x175/products/27270/18330/Game-Gamecube-HarryPPOA-2__90499.1.jpg',
-   'Harry Potter Prisoner of Azkaban',
-   'Game',
-   'Game Cube'
-),
-(
    5,
    19.99,
    'Dragon Ball Z Budokai',
@@ -96,15 +78,6 @@ INSERT INTO products (quantity, price, description, image, name, type, console) 
     'Lego Star Wars',
     'Game',
     'Game Cube'
-),
-(
-     3,
-     12.99,
-     'The Sims',
-     'https://cdn11.bigcommerce.com/s-ymgqt/images/stencil/175x175/products/27373/18444/Game-Gamecube-Sims-2__31150.1.jpg',
-     'The Sims',
-     'Game',
-     'Game Cube'
 ),
 (
        5,
@@ -278,6 +251,33 @@ INSERT INTO products (quantity, price, description, image, name, type, console) 
      'Game',
      'SNES'
  ),
+ (
+      4,
+      69.99,
+      'Platformer',
+      'https://m.media-amazon.com/images/I/51TeTvm8cxL._AC_SY1000_.jpg',
+      'Super Mario World 2',
+      'Game',
+      'SNES'
+  ),
+  (
+      4,
+      34.99,
+      'Platformer',
+      'https://upload.wikimedia.org/wikipedia/en/d/d8/Kirbydreamcourse.jpg',
+      'Kirbys Dream Course',
+      'Game',
+      'SNES'
+  ),
+  (
+      5,
+      25.99,
+      'Puzzle',
+      'https://i.ebayimg.com/images/g/BKMAAOxy4kpQ9gtL/s-l640.jpg',
+      'Tetris 2',
+      'Game',
+      'SNES'
+  ),
 
  (
      4,
@@ -367,16 +367,16 @@ INSERT INTO products (quantity, price, description, image, name, type, console) 
        'NES',
        'Game'
    ),
-
-   (
-       4,
-       119.98,
-       'Platform',
-   'https://upload.wikimedia.org/wikipedia/en/thumb/9/9b/Rockman_1987.jpg/220px-Rockman_1987.jpg',
-       'Mega Man',
-       'NES',
-       'Game'
-   ),
+--
+--   (
+--       4,
+--       119.98,
+--       'Platform',
+--   'https://upload.wikimedia.org/wikipedia/en/thumb/9/9b/Rockman_1987.jpg/220px-Rockman_1987.jpg',
+--       'Mega Man',
+--       'NES',
+--       'Game'
+--   ),
 
    (
        5,
@@ -407,15 +407,15 @@ INSERT INTO products (quantity, price, description, image, name, type, console) 
        'NES',
        'Game'
    ),
-   (
-         5,
-         213.99,
-         'Gray Nintendo Entertainment System console',
-         'https://cdn.arstechnica.net/wp-content/uploads/2013/07/NES-Console-Set.jpg',
-         'Nintendo Entertainment System',
-         'NES',
-         'Console'
-      ),
+--   (
+--         5,
+--         213.99,
+--         'Gray Nintendo Entertainment System console',
+--         'https://m.media-amazon.com/images/I/41oRZQzJoDL._AC_SY1000_.jpg',
+--         'Nintendo Entertainment System',
+--         'NES',
+--         'Console'
+--      ),
       (
          4,
          54.99,
@@ -424,15 +424,15 @@ INSERT INTO products (quantity, price, description, image, name, type, console) 
          'NES',
          'Accessory'
       ),
-      (
-          3,
-          28.99,
-          'Main controller for NES',
-      'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Nintendo-Entertainment-System-NES-Controller-FL.jpg/120px-Nintendo-Entertainment-System-NES-Controller-FL.jpg',
-          'NES Controller',
-          'NES',
-          'Accessory'
-      ),
+--      (
+--          3,
+--          28.99,
+--          'Main controller for NES',
+--      'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Nintendo-Entertainment-System-NES-Controller-FL.jpg/120px-Nintendo-Entertainment-System-NES-Controller-FL.jpg',
+--          'NES Controller',
+--          'NES',
+--          'Accessory'
+--      ),
 
       (
           2,
