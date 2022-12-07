@@ -71,6 +71,7 @@ public class AuthController {
                 null,
                 null);
 
+
         return ResponseEntity.status(HttpStatus.CREATED).body(authService.register(created));
     }
 }
