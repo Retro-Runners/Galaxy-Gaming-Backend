@@ -108,66 +108,30 @@ INSERT INTO products (quantity, price, description, image, name, type, console) 
 ),
 (
        5,
-       29.99,
-       'SpongeBob SquarePants The Movie',
-       'https://cdn11.bigcommerce.com/s-ymgqt/images/stencil/175x175/products/18984/11257/Complete%20Gamecube-39-2__70136.1.jpg',
-       'SpongeBob SquarePants The Movie',
-       'Game',
+       9.99,
+       'AV Cords for Game Cube',
+       'https://cdn11.bigcommerce.com/s-ymgqt/images/stencil/175x175/products/16382/9186/Acc_Gamecube-av-2__71242.1.jpg',
+       'AV Cords for Game Cube',
+       'Accessory',
        'Game Cube'
 ),
 (
-    0,
-    18.99,
-    'Crash Nitro Kart',
-    'https://cdn11.bigcommerce.com/s-ymgqt/images/stencil/175x175/products/36536/25017/Crash_Nitro_Kart__45927.1.jpg',
-    'Crash Nitro Kart',
-    'Game',
+    6,
+    178.99,
+    'Gaming Console',
+    'https://cdn11.bigcommerce.com/s-ymgqt/images/stencil/175x175/products/31687/23595/Black_gamecube_console__44570.1.jpg',
+    'Game Cube Console',
+    'Console',
     'Game Cube'
 ),
 (
-   5,
-   109.99,
-   'Clear GameBoy Advance console', 'https://cdn11.bigcommerce.com/s-ymgqt/images/stencil/320w/products/31074/35247/GBA-Clear__24645.1668463414.jpg?c=2',
-   'GameBoy Advance',
-   'GBA',
-   'Console'
-),
-(
-   4,
-   4.99,
-   'Allows you to connect multiple GameBoy Micro units together', 'https://cdn11.bigcommerce.com/s-ez2sytmqce/images/stencil/1280x1280/products/31243/20460/IMG_1417__97495.1521128374.jpg?c=2',
-   'Micro Link Cable',
-   'GBA',
-   'Accessory'
-),
-(
     3,
-    23.99,
-    'Magnifies your screen for improved viewing',
-    'https://i.ebayimg.com/images/g/GGQAAOSwMaphB~fF/s-l500.jpg',
-    'Screen Magnifier',
-    'GBA',
-    'Accessory'
-),
-
-(
-    2,
-    39.99,
-    'Enables up to 5 players to use the multiplayer mode wirelessly',
-    'https://cdn.shopify.com/s/files/1/0248/9538/9795/products/bum_1024x.png?v=1631167889',
-    'Wireless Adapter',
-    'GBA',
-    'Accessory'
-),
-
-(
-    5,
-    6.99,
-    'Allows you to connect multiple GameBoy units together',
-    'https://m.media-amazon.com/images/I/61X20PyCa6S._SL1500_.jpg',
-    'Link Cable',
-    'GBA',
-    'Accessory'
+    48.99,
+    'Original Controller',
+    'https://cdn11.bigcommerce.com/s-ymgqt/images/stencil/175x175/products/16379/9183/Acc_Gamecube-1-2__22395.1.jpg',
+    'Original Controller Black',
+    'Accessory',
+    'Game Cube'
 ),
 
 (
@@ -251,16 +215,6 @@ INSERT INTO products (quantity, price, description, image, name, type, console) 
 ),
 
 (
-    3,
-    14.99,
-    'Action',
-    'https://m.media-amazon.com/images/I/61EP337NGFL.jpg',
-    'Namco Museum',
-    'GBA',
-    'Game'
-),
-
-(
     5,
     29.99,
     'Platform',
@@ -268,60 +222,35 @@ INSERT INTO products (quantity, price, description, image, name, type, console) 
     'Super Mario Advance',
     'GBA',
     'Game'
-),(
-     3,
-     62.99,
-     '2D slasher',
-     'https://cdn11.bigcommerce.com/s-ymgqt/images/stencil/320w/products/26452/33322/Legend-of-Zelda-A-Link-To-t__89317.1668631391.jpg?c=2',
-     'Legend of Zelda: A Link to the Past',
-     'Game',
-     'SNES'
- ),
- (
-     4,
-     28.47,
-     'Input device for snes',
-     'https://images.lukiegames.com/t_300e2/assets/images/snes/snes_orig_ctl_p_yvn1uo.jpg',
-     'Super Nintendo Controller',
-     'Accessory',
-     'SNES'
- ),
- (
-     5,
-     29.99,
-     'Used to play game boy games on big screen',
-     'https://cdn11.bigcommerce.com/s-ymgqt/images/stencil/320w/products/16357/40869/sgameboyplyr-snes__46818.1668448674.jpg?c=2',
-     'SNES SUPER GAMEBOY PLAYER',
-     'Accessory',
-     'SNES'
- ),
- (
-     3,
-     24.99,
-     'Visual output adapter',
-     'https://cdn11.bigcommerce.com/s-ymgqt/images/stencil/320w/products/43749/51941/hdmi-----1__35401.1668616113.jpg?c=2',
-     'AV TO HDMI CONVERTER',
-     'Accessory',
-     'SNES'
- ),
- (
-     4,
-     8.55,
-     'Increase cable length',
-     'https://i5.walmartimages.com/asr/6bbeb13f-5e35-48cd-9bb0-c9a5f933a159.0cbebdea333831d973d2be6e7988c966.jpeg',
-     'SNES Controller Extention Cable',
-     'Accessory',
-     'SNES'
- ),
- (
-     5,
-     335.76,
-     'SNES console',
-     'https://m.media-amazon.com/images/I/71W-85cQmQL.jpg',
-     'Super Nintendo Entertainment System',
-     'Console',
-     'SNES'
- ),
+),
+
+(
+   5,
+   109.99,
+   'Clear GameBoy Advance console', 'https://cdn11.bigcommerce.com/s-ymgqt/images/stencil/320w/products/31074/35247/GBA-Clear__24645.1668463414.jpg?c=2',
+   'GameBoy Advance',
+   'GBA',
+   'Console'
+),
+(
+    3,
+    23.99,
+    'Magnifies your screen for improved viewing',
+    'https://i.ebayimg.com/images/g/GGQAAOSwMaphB~fF/s-l500.jpg',
+    'Screen Magnifier',
+    'GBA',
+    'Accessory'
+),
+
+(
+    2,
+    39.99,
+    'Enables up to 5 players to use the multiplayer mode wirelessly',
+    'https://cdn.shopify.com/s/files/1/0248/9538/9795/products/bum_1024x.png?v=1631167889',
+    'Wireless Adapter',
+    'GBA',
+    'Accessory'
+),
  (
      4,
      79.99,
@@ -348,51 +277,36 @@ INSERT INTO products (quantity, price, description, image, name, type, console) 
      'Super Mario Kart',
      'Game',
      'SNES'
- ),(
-      5,
-      213.99,
-      'Gray Nintendo Entertainment System console', 'https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/NES-Console-Set.jpg/220px-NES-Console-Set.jpg',
-      'Nintendo Entertainment System',
-      'NES',
-      'Console'
-   ),
-   (
-      4,
-      54.99,
-      'Arcade style controller', 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Nintendo-NES-Advantage-Controller.jpg/220px-Nintendo-NES-Advantage-Controller.jpg',
-      'NES Advantage',
-      'NES',
-      'Accessory'
-   ),
-   (
-       3,
-       28.99,
-       'Main controller for NES',
-   'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Nintendo-Entertainment-System-NES-Controller-FL.jpg/120px-Nintendo-Entertainment-System-NES-Controller-FL.jpg',
-       'NES Controller',
-       'NES',
-       'Accessory'
-   ),
+ ),
 
-   (
-       2,
-       23.99,
-       'Allows player to point at the screen and “shoot” at in-game targets',
-   'https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Nintendo-Entertainment-System-NES-Zapper-Gray-L.jpg/220px-Nintendo-Entertainment-System-NES-Zapper-Gray-L.jpg',
-       'NES Zapper',
-       'NES',
-       'Accessory'
-   ),
+ (
+     4,
+     28.47,
+     'Input device for snes',
+     'https://images.lukiegames.com/t_300e2/assets/images/snes/snes_orig_ctl_p_yvn1uo.jpg',
+     'Super Nintendo Controller',
+     'Accessory',
+     'SNES'
+ ),
+ (
+     5,
+     29.99,
+     'Used to play game boy games on big screen',
+     'https://cdn11.bigcommerce.com/s-ymgqt/images/stencil/320w/products/16357/40869/sgameboyplyr-snes__46818.1668448674.jpg?c=2',
+     'SNES SUPER GAMEBOY PLAYER',
+     'Accessory',
+     'SNES'
+ ),
+ (
+     5,
+     335.76,
+     'SNES console',
+     'https://videogameperfection.com/wp-content/uploads/2017/08/Nintendo-SNES.jpg',
+     'Super Nintendo Entertainment System',
+     'Console',
+     'SNES'
+ ),
 
-   (
-       5,
-       175,
-       'Robot that can substitute for a second player on NES',
-   'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/NES-ROB.jpg/220px-NES-ROB.jpg',
-       'Robotic Operating Buddy (ROB)',
-       'NES',
-       'Accessory'
-   ),
 
    (
        5,
@@ -492,7 +406,53 @@ INSERT INTO products (quantity, price, description, image, name, type, console) 
        'Duck Hunt',
        'NES',
        'Game'
-   )
+   ),
+   (
+         5,
+         213.99,
+         'Gray Nintendo Entertainment System console',
+         'https://cdn.arstechnica.net/wp-content/uploads/2013/07/NES-Console-Set.jpg',
+         'Nintendo Entertainment System',
+         'NES',
+         'Console'
+      ),
+      (
+         4,
+         54.99,
+         'Arcade style controller', 'https://upload.wikimedia.org/wikipedia/commons/thumb/c/c3/Nintendo-NES-Advantage-Controller.jpg/220px-Nintendo-NES-Advantage-Controller.jpg',
+         'NES Advantage',
+         'NES',
+         'Accessory'
+      ),
+      (
+          3,
+          28.99,
+          'Main controller for NES',
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/b/b5/Nintendo-Entertainment-System-NES-Controller-FL.jpg/120px-Nintendo-Entertainment-System-NES-Controller-FL.jpg',
+          'NES Controller',
+          'NES',
+          'Accessory'
+      ),
+
+      (
+          2,
+          23.99,
+          'Allows player to point at the screen and “shoot” at in-game targets',
+      'https://i.etsystatic.com/8948780/r/il/a9dec4/1918404357/il_fullxfull.1918404357_pt7l.jpg',
+          'NES Zapper',
+          'NES',
+          'Accessory'
+      ),
+
+      (
+          5,
+          175,
+          'Robot that can substitute for a second player on NES',
+      'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/NES-ROB.jpg/220px-NES-ROB.jpg',
+          'Robotic Operating Buddy (ROB)',
+          'NES',
+          'Accessory'
+      )
 ;
 
 INSERT INTO users (id, email, pass_word, first_name, last_name, address) VALUES (

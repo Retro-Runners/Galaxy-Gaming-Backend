@@ -36,13 +36,21 @@ public class ProductServiceTest {
         item1=new Product(5, "First Person Shooter", "https://upload.wikimedia.org/wikipedia/en/1/14/DuckHuntBox.jpg", "Duck Hunt", 37.99, 5, "NES", "Game");
         item2=new Product(3, "Strategy", "https://upload.wikimedia.org/wikipedia/en/thumb/7/7d/Tetris_NES_cover_art.jpg/220px-Tetris_NES_cover_art.jpg", "Tetris",19.95,4, "NES", "Game");
         item3 = new Product();
-        //item3.setId();
+        item3.setId(2);
+        item3.setQuantity(4);
+        item3.setName("Metroid");
+        item3.setImage("https://upload.wikimedia.org/wikipedia/en/thumb/5/5d/Metroid_boxart.jpg/220px-Metroid_boxart.jpg");
+        item3.setConsole("NES");
+        item3.setPrice(35.34);
+        item3.setDescription("Action");
+        item3.setType("Game");
         item1FromDb=new Product(5, "First Person Shooter", "https://upload.wikimedia.org/wikipedia/en/1/14/DuckHuntBox.jpg", "Duck Hunt", 37.99, 5, "NES", "Game");
 
 
         items = new ArrayList<Product>();
         items.add(item1);
         items.add(item2);
+        items.add(item3);
 
     }
 
@@ -93,6 +101,15 @@ public class ProductServiceTest {
 
         Mockito.when(productRepository.saveAll(items)).thenReturn(items);
 
+        List<Product> dbItems = productRepository.saveAll(items);
 
+        Assertions.assertEquals(item3, dbItems.get(2));
+        Assertions.assertEquals(item3.getId(), dbItems.get(2).getId());
+        Assertions.assertEquals(item3.getQuantity(), dbItems.get(2).getQuantity());
+        Assertions.assertEquals(item3.getName(), dbItems.get(2).getName());
+        Assertions.assertEquals(item3.getType(), dbItems.get(2).getType());
+        Assertions.assertEquals(item3.getImage(), dbItems.get(2).getImage());
+        Assertions.assertEquals(item3.getConsole(), dbItems.get(2).getConsole());
+        Assertions.assertEquals(item3.getDescription(), dbItems.get(2).getDescription());
     }
 }
