@@ -29,12 +29,14 @@ public class ProductServiceTest {
     private Product item1;
     private Product item1FromDb;
     private Product item2;
+    private Product item3;
 
     @BeforeEach
     public void populateObjects() {
         item1=new Product(5, "First Person Shooter", "https://upload.wikimedia.org/wikipedia/en/1/14/DuckHuntBox.jpg", "Duck Hunt", 37.99, 5, "NES", "Game");
         item2=new Product(3, "Strategy", "https://upload.wikimedia.org/wikipedia/en/thumb/7/7d/Tetris_NES_cover_art.jpg/220px-Tetris_NES_cover_art.jpg", "Tetris",19.95,4, "NES", "Game");
-
+        item3 = new Product();
+        //item3.setId();
         item1FromDb=new Product(5, "First Person Shooter", "https://upload.wikimedia.org/wikipedia/en/1/14/DuckHuntBox.jpg", "Duck Hunt", 37.99, 5, "NES", "Game");
 
 
@@ -72,7 +74,7 @@ public class ProductServiceTest {
 
     }
     @Test
-    void givenProduct_addProductToList_returnsProductAddedToList() {
+    void givenProduct_saveProductToList_returnsProductAddedToList() {
         Mockito.when(productRepository.save(item1)).thenReturn(item1FromDb);
 
         Product returnedProductAddedToDb = productRepository.save(item1);
@@ -86,5 +88,11 @@ public class ProductServiceTest {
         Assertions.assertEquals(item1FromDb.getConsole(), returnedProductAddedToDb.getConsole());
         Assertions.assertEquals(item1FromDb.getDescription(), returnedProductAddedToDb.getDescription());
     }
+    @Test
+    void givenProductList_saveProductListToDB_returnsProductListAddedToDb() {
 
+        Mockito.when(productRepository.saveAll(items)).thenReturn(items);
+
+
+    }
 }
