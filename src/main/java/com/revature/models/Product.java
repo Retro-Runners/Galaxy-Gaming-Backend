@@ -29,7 +29,7 @@ public class Product {
     private String name;
 
     @Column(name = "price")
-    private String price;
+    private double price;
 
     @Column(name = "quantity")
     private int quantity; // inventory

@@ -46,7 +46,7 @@ public class ProductController {
         return ResponseEntity.ok(productService.save(product));
     }
 
-    @Authorized
+//    @Authorized
     @PatchMapping
     public ResponseEntity<List<Product>> purchase(@RequestBody List<ProductInfo> metadata) { 	
     	List<Product> productList = new ArrayList<Product>();
