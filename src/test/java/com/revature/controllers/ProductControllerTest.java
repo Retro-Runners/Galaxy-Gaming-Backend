@@ -76,7 +76,7 @@ public class ProductControllerTest {
         ResponseEntity<Product> finalProduct = productController.upsert(newProduct);
 
         Assertions.assertEquals(dataDBProduct.getId(), finalProduct.getBody().getId());
-        Assertions.assertEquals(dataDBProduct.getType(), finalProduct.getBody().getType();
+        Assertions.assertEquals(dataDBProduct.getType(), finalProduct.getBody().getType());
         Assertions.assertEquals(dataDBProduct.getConsole(), finalProduct.getBody().getConsole());
         Assertions.assertEquals(dataDBProduct.getName(), finalProduct.getBody().getName());
         Assertions.assertEquals(dataDBProduct.getPrice(), finalProduct.getBody().getPrice());
@@ -107,7 +107,7 @@ public class ProductControllerTest {
         ResponseEntity<Product> finalProduct = productController.getProductById(id);
 
         Assertions.assertEquals(dataDBProduct.getId(), finalProduct.getBody().getId());
-        Assertions.assertEquals(dataDBProduct.getType(), finalProduct.getBody().getType();
+        Assertions.assertEquals(dataDBProduct.getType(), finalProduct.getBody().getType());
         Assertions.assertEquals(dataDBProduct.getConsole(), finalProduct.getBody().getConsole());
         Assertions.assertEquals(dataDBProduct.getName(), finalProduct.getBody().getName());
         Assertions.assertEquals(dataDBProduct.getPrice(), finalProduct.getBody().getPrice());
