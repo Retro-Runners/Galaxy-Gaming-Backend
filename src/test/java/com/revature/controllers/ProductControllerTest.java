@@ -11,7 +11,6 @@ import org.junit.jupiter.api.Test;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.Mockito;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.ResponseEntity;
 import org.springframework.mock.web.MockHttpSession;
 
@@ -35,6 +34,8 @@ public class ProductControllerTest {
     private List<Product> productList;
     private Product newProduct;
     private Product dataDBProduct;
+
+    private Optional<Product> optionalProduct;
     private int id = 1;
     private String type = "Console";
     private String console = "N64";
@@ -117,25 +118,29 @@ public class ProductControllerTest {
 
     }
 
-
-
+    // testing the delete function
     @Test
-    void getInventory() {
+    public void Delete_ReturnsProductToBeDeleted() {
+
+        Mockito.when(productService.findById(id)).thenReturn(optionalProduct);
+
+        ResponseEntity<Product> finalProduct = productController.deleteProduct(id);
+
+        Assertions.assertEquals(dataDBProduct.getId(), finalProduct.getBody().getId());
+        Assertions.assertEquals(dataDBProduct.getType(), finalProduct.getBody().getType();
+        Assertions.assertEquals(dataDBProduct.getConsole(), finalProduct.getBody().getConsole());
+        Assertions.assertEquals(dataDBProduct.getName(), finalProduct.getBody().getName());
+        Assertions.assertEquals(dataDBProduct.getPrice(), finalProduct.getBody().getPrice());
+        Assertions.assertEquals(dataDBProduct.getQuantity(), finalProduct.getBody().getQuantity());
+        Assertions.assertEquals(dataDBProduct.getDescription(), finalProduct.getBody().getDescription());
+        Assertions.assertEquals(dataDBProduct.getImage(), finalProduct.getBody().getImage());
+
     }
 
+    // testing the purchase function
     @Test
-    void getProductById() {
+    public void Purchase_Returns() {
+
     }
 
-    @Test
-    void upsert() {
-    }
-
-    @Test
-    void purchase() {
-    }
-
-    @Test
-    void deleteProduct() {
-    }
 }
